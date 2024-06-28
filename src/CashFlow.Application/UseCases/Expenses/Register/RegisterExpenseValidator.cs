@@ -3,7 +3,7 @@ using CashFlow.Exception;
 using FluentValidation;
 
 namespace CashFlow.Application.UseCases.Expenses.Register;
-internal class RegisterExpenseValidator : AbstractValidator<RegisterExpensesRequest>
+public class RegisterExpenseValidator : AbstractValidator<RegisterExpensesRequest>
 {
     public RegisterExpenseValidator()
     {
