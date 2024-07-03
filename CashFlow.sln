@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CashFlow.Infrastructure", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CashFlow.Exception", "src\CashFlow.Exception\CashFlow.Exception.csproj", "{6B460FBA-5B34-4136-AD4C-2C7B6C4088AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validators.Tests", "tests\Validators.Tests\Validators.Tests.csproj", "{21BD81E6-913E-44EC-B1C3-B86601EE7AF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Validators.Tests", "tests\Validators.Tests\Validators.Tests.csproj", "{21BD81E6-913E-44EC-B1C3-B86601EE7AF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonTestUtilities", "tests\CommonTestUtilities\CommonTestUtilities.csproj", "{FBC1C81B-657E-47B4-BEDC-7D1C99B44346}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,10 @@ Global
 		{21BD81E6-913E-44EC-B1C3-B86601EE7AF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21BD81E6-913E-44EC-B1C3-B86601EE7AF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21BD81E6-913E-44EC-B1C3-B86601EE7AF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBC1C81B-657E-47B4-BEDC-7D1C99B44346}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBC1C81B-657E-47B4-BEDC-7D1C99B44346}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBC1C81B-657E-47B4-BEDC-7D1C99B44346}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBC1C81B-657E-47B4-BEDC-7D1C99B44346}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +73,7 @@ Global
 		{8CCCAB7D-B519-4D30-9C6A-FB618AA12B09} = {C8AEA655-9339-4392-A850-152481934E75}
 		{6B460FBA-5B34-4136-AD4C-2C7B6C4088AF} = {C8AEA655-9339-4392-A850-152481934E75}
 		{21BD81E6-913E-44EC-B1C3-B86601EE7AF9} = {31D7FF34-29D2-4385-9C58-FEFED12C9B6A}
+		{FBC1C81B-657E-47B4-BEDC-7D1C99B44346} = {31D7FF34-29D2-4385-9C58-FEFED12C9B6A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AA23BA08-443C-4FD3-9C0C-EA060A0F19A8}
