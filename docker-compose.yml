@@ -9,7 +9,7 @@ services:
     depends_on:
       - cashflow.db
   cashflow.db:
-    image: mysql:5.7
+    image: mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: cashflow
