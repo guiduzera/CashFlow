@@ -19,9 +19,9 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
-    - name: Restore API dependencies
-      run: dotnet restore CashFlow
+    - name: Restore dependencies
+      run: dotnet restore CashFlow.sln
     - name: Build
-      run: dotnet build --no-restore --configuration Release CashFlow
-    - name: Test
-      run: dotnet test --no-build --configuration Release --verbosity normal CashFlow
+      run: dotnet build CashFlow.sln --configuration Release --no-restore
+    - name: Run tests
+      run: dotnet test CashFlow.sln --configuration Release --no-build --verbosity normal
