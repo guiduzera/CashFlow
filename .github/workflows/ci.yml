@@ -21,6 +21,10 @@ jobs:
         dotnet-version: 8.0.x
     - name: Restore dependencies
       run: dotnet restore CashFlow.sln
+    - name: Build
+      run: dotnet build CashFlow.sln --configuration Release --no-restore
+    - name: Run tests
+      run: dotnet test CashFlow.sln --configuration Release --no-build --verbosity normal
     - name: Generate tag
       id: tag
       run: |
@@ -28,7 +32,3 @@ jobs:
        echo "sha=$SHA" >> $GITHUB_OUTPUT
     - name: Build Docker image
       run: docker build -t cashflowapi:${{ steps.tag.outputs.sha }} ./src/CashFlow.API
-    - name: Build
-      run: dotnet build CashFlow.sln --configuration Release --no-restore
-    - name: Run tests
-      run: dotnet test CashFlow.sln --configuration Release --no-build --verbosity normal
