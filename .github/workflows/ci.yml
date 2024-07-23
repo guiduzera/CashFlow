@@ -19,11 +19,13 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
-    - name: Restore dependencies
+    - name: Restore API dependencies
       run: dotnet restore src/CashFlow.API/CashFlow.API.csproj
     - name: Build
       run: dotnet build --no-restore --configuration Release src/CashFlow.API/CashFlow.API.csproj
     - name: Publish
       run: dotnet publish --no-build --configuration Release src/CashFlow.API/CashFlow.API.csproj -o out
+    - name: Restore Validators dependencies
+      run: dotnet restore tests/Validators.Tests/Validators.Tests.csproj
     - name: Test
       run: dotnet test --no-build --configuration Release --verbosity normal tests/Validators.Tests/Validators.Tests.csproj
