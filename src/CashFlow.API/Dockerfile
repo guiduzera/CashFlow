@@ -9,15 +9,15 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["src/CashFlow.API/CashFlow.API.csproj", "CashFlow.API/"]
-COPY ["src/CashFlow.Application/CashFlow.Application.csproj", "CashFlow.Application/"]
-COPY ["src/CashFlow.Communication/CashFlow.Communication.csproj", "CashFlow.Communication/"]
-COPY ["src/CashFlow.Domain/CashFlow.Domain.csproj", "CashFlow.Domain/"]
-COPY ["src/CashFlow.Exception/CashFlow.Exception.csproj", "CashFlow.Exception/"]
-COPY ["src/CashFlow.Infrastructure/CashFlow.Infrastructure.csproj", "CashFlow.Infrastructure/"]
+COPY ["src/CashFlow.API/CashFlow.API.csproj", "src/CashFlow.API/"]
+COPY ["src/CashFlow.Application/CashFlow.Application.csproj", "src/CashFlow.Application/"]
+COPY ["src/CashFlow.Communication/CashFlow.Communication.csproj", "src/CashFlow.Communication/"]
+COPY ["src/CashFlow.Domain/CashFlow.Domain.csproj", "src/CashFlow.Domain/"]
+COPY ["src/CashFlow.Exception/CashFlow.Exception.csproj", "src/CashFlow.Exception/"]
+COPY ["src/CashFlow.Infrastructure/CashFlow.Infrastructure.csproj", "src/CashFlow.Infrastructure/"]
 RUN dotnet restore "./src/CashFlow.API/CashFlow.API.csproj"
 COPY . .
-WORKDIR "/src/CashFlow.API"
+WORKDIR "/src/src/CashFlow.API"
 RUN dotnet build "./CashFlow.API.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
