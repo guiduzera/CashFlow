@@ -25,7 +25,5 @@ jobs:
       run: dotnet build CashFlow.sln --configuration Release --no-restore
     - name: Run tests
       run: dotnet test CashFlow.sln --configuration Release --no-build --verbosity normal
-    - name: Publish
-      run: dotnet publish CashFlow.sln --configuration Release --no-build --output ./publish
     - name: Build Docker image
       run: docker build -t cashflowapi ./src/CashFlow.API
