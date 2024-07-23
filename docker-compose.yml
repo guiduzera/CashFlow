@@ -5,7 +5,7 @@ services:
     image: ${DOCKER_REGISTRY-}cashflowapi
     build:
       context: .
-      dockerfile: .
+      dockerfile: Dockerfile
     depends_on:
       - cashflow.db
   cashflow.db:
