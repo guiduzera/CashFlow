@@ -25,4 +25,4 @@ jobs:
     - name: Build
       run: dotnet build --no-restore --configuration Release src/CashFlow.API/CashFlow.API.csproj
     - name: Test
-      run: dotnet test --no-build --verbosity normal test/Validators.Tests/Validators.Tests.csproj
+      run: dotnet test --no-build --verbosity normal tests/Validators.Tests/Validators.Tests.csproj
