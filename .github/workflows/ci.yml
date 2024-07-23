@@ -25,5 +25,10 @@ jobs:
       run: dotnet build CashFlow.sln --configuration Release --no-restore
     - name: Run tests
       run: dotnet test CashFlow.sln --configuration Release --no-build --verbosity normal
+    - name: Generate tag
+      id: tag
+      run: |
+       SHA=$(echo $GITHUB_SHA | head -c7)
+       echo "sha=$SHA" >> $GITHUB_OUTPUT
     - name: Build Docker image
-      run: docker build -t cashflowapi ./src/CashFlow.API
+      run: docker build -t cashflowapi:${{ steps.tag.outputs.sha }} ./src/CashFlow.API
