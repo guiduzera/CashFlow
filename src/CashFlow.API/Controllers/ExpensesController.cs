@@ -17,4 +17,10 @@ public class ExpensesController : ControllerBase
 
         return Created(string.Empty, useCase);
     }
+
+    [HttpGet]
+    public IActionResult HelloWorld() 
+    {
+        return Ok("Hello, World!");
+    }
 }
